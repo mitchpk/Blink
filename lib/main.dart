@@ -33,10 +33,8 @@ class MyHomePage extends StatelessWidget {
 class Editor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextField(
-        maxLines: null,
-      ),
+    return TextField(
+      maxLines: null,
     );
   }
 }
