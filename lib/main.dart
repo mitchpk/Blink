@@ -1,3 +1,4 @@
+import 'package:blink/widgets/SplitView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_treeview/flutter_simple_treeview.dart';
 
@@ -21,11 +22,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          NoteList(),
-          Editor(),
-        ],
+      body: Split(
+        left: NoteList(),
+        right: Editor(),
       ),
     );
   }
