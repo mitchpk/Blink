@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Split(
+      body: VerticalSplitView(
         left: NoteList(),
         right: Editor(),
       ),
