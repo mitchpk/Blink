@@ -1,3 +1,4 @@
+import 'package:blink/widgets/Editor.dart';
 import 'package:blink/widgets/SplitView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_treeview/flutter_simple_treeview.dart';
@@ -26,15 +27,6 @@ class MyHomePage extends StatelessWidget {
         left: NoteList(),
         right: Editor(),
       ),
-    );
-  }
-}
-
-class Editor extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      maxLines: null,
     );
   }
 }
