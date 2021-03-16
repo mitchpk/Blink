@@ -34,31 +34,28 @@ class MyHomePage extends StatelessWidget {
 class NoteList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 200,
-      child: TreeView(
-        nodes: [
-          TreeNode(content: Text("root1")),
-          TreeNode(
-            content: Text("root2"),
-            children: [
-              TreeNode(
-                content: TextButton(
-                  child: Text("child21"),
-                  onPressed: () {},
-                ),
+    return TreeView(
+      nodes: [
+        TreeNode(content: Text("root1")),
+        TreeNode(
+          content: Text("root2"),
+          children: [
+            TreeNode(
+              content: TextButton(
+                child: Text("child21"),
+                onPressed: () {},
               ),
-              TreeNode(content: Text("child22")),
-              TreeNode(
-                content: Text("root23"),
-                children: [
-                  TreeNode(content: Text("child231")),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
+            ),
+            TreeNode(content: Text("child22")),
+            TreeNode(
+              content: Text("root23"),
+              children: [
+                TreeNode(content: Text("child231")),
+              ],
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
