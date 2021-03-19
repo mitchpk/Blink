@@ -1,7 +1,7 @@
 import 'package:blink/widgets/Editor.dart';
+import 'package:blink/widgets/NoteList.dart';
 import 'package:blink/widgets/SplitView.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_simple_treeview/flutter_simple_treeview.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,31 +31,3 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class NoteList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return TreeView(
-      nodes: [
-        TreeNode(content: Text("root1")),
-        TreeNode(
-          content: Text("root2"),
-          children: [
-            TreeNode(
-              content: TextButton(
-                child: Text("child21"),
-                onPressed: () {},
-              ),
-            ),
-            TreeNode(content: Text("child22")),
-            TreeNode(
-              content: Text("root23"),
-              children: [
-                TreeNode(content: Text("child231")),
-              ],
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
