@@ -24,10 +24,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: VerticalSplitView(
+        ratio: 0.2,
         left: NoteList(),
         right: Editor(),
       ),
     );
   }
 }
-

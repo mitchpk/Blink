@@ -12,36 +12,60 @@ class _EditorState extends State<Editor> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Expanded(
-          child: Scrollbar(
-            child: TextField(
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
-              expands: true,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                disabledBorder: InputBorder.none,
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                child: Padding(
+                  child: Icon(Icons.description),
+                  padding: EdgeInsets.all(4),
+                ),
+                onTap: () {},
+                borderRadius: BorderRadius.circular(4),
               ),
-              onChanged: (String text) {
-                setState(() {
-                  markdownText = text;
-                });
-              },
-            ),
+            ],
           ),
         ),
-        VerticalDivider(),
+        Divider(
+          height: 1,
+        ),
         Expanded(
-          child: Markdown(
-            data: markdownText,
-            onTapLink: (text, href, title) {
-              if (href != null) launch(href);
-            },
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  style: TextStyle(fontFamily: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace'),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: null,
+                  expands: true,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                  ),
+                  onChanged: (String text) {
+                    setState(() {
+                      markdownText = text;
+                    });
+                  },
+                ),
+              ),
+              VerticalDivider(),
+              Expanded(
+                child: Markdown(
+                  data: markdownText,
+                  onTapLink: (text, href, title) {
+                    if (href != null) launch(href);
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ],

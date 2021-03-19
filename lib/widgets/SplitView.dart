@@ -58,11 +58,7 @@ class _VerticalSplitViewState extends State<VerticalSplitView> {
                 child: SizedBox(
                   width: _dividerWidth,
                   height: constraints.maxHeight,
-                  child: Container(
-                    color: Colors.white,
-                    margin:
-                        EdgeInsets.symmetric(horizontal: _dividerWidth / 2 - 1),
-                  ),
+                  child: VerticalDivider(),
                 ),
               ),
               onPanUpdate: (DragUpdateDetails details) {
